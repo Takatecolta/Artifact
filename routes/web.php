@@ -1,5 +1,6 @@
 <?php
-
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;      //追加
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,7 +11,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/posts/index', 'UserController@index');
+Auth::routes();
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index')->name('home');
