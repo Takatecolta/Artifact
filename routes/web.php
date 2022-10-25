@@ -12,6 +12,13 @@ use App\Http\Controllers\UserController;      //追加
 |
 */
 Route::get('/posts/index', 'UserController@index');
+
+Route::get('/posts/create', 'UserController@create');
+
+Route::get('/posts/{user}', 'UserController@show');
+
+Route::post('/posts', 'UserController@store');
+
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
