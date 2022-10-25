@@ -22,7 +22,9 @@ class UserController extends Controller
     }
     public function store(Request $request, User $user)
     {
-      dd($request->all());
+        $input = $request['post'];
+        $post->fill($input)->save();
+        return redirect('/posts/' . $post->id);
     }
 }
 ?>
