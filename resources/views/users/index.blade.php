@@ -15,18 +15,14 @@
                        <a href="/posts/{{ $user->id }}">{{ $user->id }}</a>
                     </h2>
                     <p class='name'>{{ $user->name }}</p>
-                    <p class="edit">[<a href="/posts/{{ $user->id }}/edit">edit</a>]</p>
+                    <h2 class='make'>
+                        [<a href='/posts/create'>create</a>]
+                    </h2>
                 </div>
             @endforeach
         </div>
-        <form action="/posts/{{ $user->id }}" id="form_{{ $user->id }}" method="post" style="display:inline">
-        @csrf
-        @method('DELETE')
-        <button type="submit">delete</button> 
-        </form>
         <div class='paginate'>
             {{ $users->links() }}
         </div>
-        <div class="back">[<a href="/">back</a>]</div>
     </body>
 </html>

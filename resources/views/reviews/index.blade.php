@@ -9,24 +9,20 @@
     <body>
         <h1>Blog Name</h1>
         <div class='posts'>
-            @foreach ($users as $user)
+            @foreach ($reviews as $review)
                 <div class='post'>
                     <h2 class='id'>
-                       <a href="/posts/{{ $user->id }}">{{ $user->id }}</a>
+                       <a href="/reviews/{{ $review->id }}">{{ $review->id }}</a>
                     </h2>
-                    <p class='name'>{{ $user->name }}</p>
-                    <p class="edit">[<a href="/posts/{{ $user->id }}/edit">edit</a>]</p>
+                    <p class='name'>{{ $review->name }}</p>
+                    <h2 class='make'>
+                        [<a href='/reviews/create'>create</a>]
+                    </h2>
                 </div>
             @endforeach
         </div>
-        <form action="/posts/{{ $user->id }}" id="form_{{ $user->id }}" method="post" style="display:inline">
-        @csrf
-        @method('DELETE')
-        <button type="submit">delete</button> 
-        </form>
         <div class='paginate'>
-            {{ $users->links() }}
+            {{ $review->links() }}
         </div>
-        <div class="back">[<a href="/">back</a>]</div>
     </body>
 </html>

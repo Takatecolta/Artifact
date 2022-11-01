@@ -18,7 +18,6 @@
                 <p>{{ $users->body }}</p>    
             </div>
         </div>
-        <p class="edit">[<a href="/posts/{{ $user->id }}/edit">edit</a>]</p>
         <div class="footer">
             <a href="/posts/index">戻る</a>
         </div>
