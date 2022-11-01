@@ -11,14 +11,31 @@ use App\Http\Controllers\UserController;      //追加
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/posts/index', 'UserController@index');
 
-Route::get('/posts/create', 'UserController@create');
+Route::group(['middleware' => ['auth']],function(){
+    
+    Route::get('/', 'HomeController@index');
+    
+    Route::get('/reviews/index', 'UserController@index');
 
-Route::get('/posts/{user}', 'UserController@show');
+    Route::get('/reviews/create', 'ReviewController@create');
 
-Route::post('/posts', 'UserController@store');
+    Route::get('/reviews/{user}', 'UserController@show');
 
+    Route::post('/reviews', 'ReviewController@store');
+
+    Route::get('/posts/index', 'UserController@index');
+
+    Route::get('/posts/{user}/edit', 'UserController@edit');
+    Route::put('/posts/{user}', 'UserController@update');
+
+    Route::delete('/posts/{user}', 'UserController@delete');
+
+    Route::get('/gets/index', 'TargetController@create');
+
+    Route::get('/gets/setting', 'TargetController@setting');
+ 
+});
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home');
+
