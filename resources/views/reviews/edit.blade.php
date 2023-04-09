@@ -9,16 +9,16 @@
     <body>
     <h1 class="title">編集画面</h1>
     <div class="content">
-        <form action="/posts/{{ $user->id }}" method="POST">
+        <form action="/reviews/{{ $reviews->id }}" method="POST">
             @csrf
             @method('PUT')
             <div class='content__title'>
                 <h2>タイトル</h2>
-                <input type='text' name='user[title]' value="{{ $user->title }}">
+                <input type='text' name='review[title]' value="{{ $reviews->title }}">
             </div>
             <div class='content__body'>
                 <h2>本文</h2>
-                <input type='text' name='user[body]' value="{{ $user->body }}">
+                <input type='text' name='review[body]' value="{{ $reviews->body }}">
             </div>
             <input type="submit" value="保存">
         </form>

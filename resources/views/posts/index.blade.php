@@ -7,7 +7,7 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
-        <h1>Blog Name</h1>
+        <h1>レビュー一覧</h1>
         <div class='posts'>
             @foreach ($users as $user)
                 <div class='post'>

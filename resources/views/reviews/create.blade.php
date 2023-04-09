@@ -9,12 +9,12 @@
         <form action="/reviews" method="POST">
             @csrf
             <div class="title">
-                <h2>Title</h2>
+                <h2>タイトル</h2>
                 <input type="text" name="review[title]" placeholder="タイトル"/>
                 <p class="title__error" style="color:red">{{ $errors->first('review.title') }}</p>
             </div>
             <div class="body">
-                <h2>Body</h2>
+                <h2>やったこと</h2>
                 <textarea name="review[body]" placeholder="今日も1日お疲れさまでした。"></textarea>
                 <p class="body__error" style="color:red">{{ $errors->first('review.body') }}</p>
             </div>
