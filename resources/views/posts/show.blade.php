@@ -18,9 +18,9 @@
                 <p>{{ $users->body }}</p>    
             </div>
         </div>
-        <p class="edit">[<a href="/posts/{{ $user->id }}/edit">edit</a>]</p>
+        <p class="edit">[<a href="/reviews/{{ $user->id }}/edit">edit</a>]</p>
         <div class="footer">
-            <a href="/posts/index">戻る</a>
+            <a href="/reviews/index">戻る</a>
         </div>
     </body>
 </html>

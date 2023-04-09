@@ -6,35 +6,37 @@
     <head>
         <meta charset="utf-8">
         <title>Blog</title>
+        <link rel="stylesheet" href="{{ asset('/css/myhome.css')  }}" >
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
         <p>{{Auth::user()->name}}</p>
-        <a href="/reviews/create">レビュー</a>
-        <a href="/posts/index">ユーザー</a>
+        <a href="/reviews/create">レビューをする</a>
+        <a href="/reviews/index">レビュー一覧</a>
+        <a>ユーザー一覧</a>
         <a href="/gets/index">集計</a>
         
         <p id="RealtimeClockArea"></p>
-        <script>
-           function set2fig(num) {
-           // 桁数が1桁だったら先頭に0を加えて2桁に調整する
-           var ret;
-           if( num < 10 ) { ret = "0" + num; }
-           else { ret = num; }
-           return ret;
-          }
-           function showClock2() {
-           var nowTime = new Date();
-           var nowHour = set2fig( nowTime.getHours() );
-           var nowMin  = set2fig( nowTime.getMinutes() );
-           var nowSec  = set2fig( nowTime.getSeconds() );
-           var msg = "現在時刻は、" + nowHour + ":" + nowMin + ":" + nowSec + " です。";
-           document.getElementById("RealtimeClockArea").innerHTML = msg;
-          }
-          setInterval('showClock2()',1000);
-        </script> 
-        <p>時間を測る</p>
+        <script src="{{ asset('/js/myhome.js') }}"></script>
+        
+        
+        
+        
+        <div class="wrapper">
+        <p><a>時間を測る</a></p>
+        <!-- 計測時間を表示 -->
+        <div id="time">00:00.000</div>
+        <div>
+        
+        <!-- スタート・ストップ・リセットボタン -->
+        <button id="start" onclick="start()">Start</button>
+        <button id="stop" onclick="stop()" disabled>Stop</button>
+        <button id="reset" onclick="reset()" disabled>Reset</button>
+        </div>
+        </div>
+        
+
     </body>
     @endsection
 </html>

@@ -16,20 +16,18 @@ Route::group(['middleware' => ['auth']],function(){
     
     Route::get('/', 'HomeController@index');
     
-    Route::get('/reviews/index', 'UserController@index');
+    Route::get('/reviews/index', 'ReviewController@index');
 
     Route::get('/reviews/create', 'ReviewController@create');
 
-    Route::get('/reviews/{user}', 'UserController@show');
+    Route::get('/reviews/{review}', 'ReviewController@show');
 
     Route::post('/reviews', 'ReviewController@store');
 
-    Route::get('/posts/index', 'UserController@index');
+    Route::get('/reviews/{review}/edit', 'ReviewController@edit');
+    Route::put('/reviews/{review}', 'ReviewController@update');
 
-    Route::get('/posts/{user}/edit', 'UserController@edit');
-    Route::put('/posts/{user}', 'UserController@update');
-
-    Route::delete('/posts/{user}', 'UserController@delete');
+    Route::delete('/reviews/{review}', 'ReviewController@delete');
 
     Route::get('/gets/index', 'TargetController@create');
 
