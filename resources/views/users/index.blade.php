@@ -7,7 +7,7 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
-        <h1>レビュー一覧</h1>
+        <h1>Blog Name</h1>
         <div class='posts'>
             @foreach ($users as $user)
                 <div class='post'>
@@ -15,18 +15,14 @@
                        <a href="/posts/{{ $user->id }}">{{ $user->id }}</a>
                     </h2>
                     <p class='name'>{{ $user->name }}</p>
-                    <p class="edit">[<a href="/posts/{{ $user->id }}/edit">edit</a>]</p>
+                    <h2 class='make'>
+                        [<a href='/posts/create'>create</a>]
+                    </h2>
                 </div>
             @endforeach
         </div>
-        <form action="/posts/{{ $user->id }}" id="form_{{ $user->id }}" method="post" style="display:inline">
-        @csrf
-        @method('DELETE')
-        <button type="submit">delete</button> 
-        </form>
         <div class='paginate'>
             {{ $users->links() }}
         </div>
-        <div class="back">[<a href="/">back</a>]</div>
     </body>
 </html>
