@@ -13,7 +13,7 @@ function set2fig(num) {
            var msg = "現在時刻は、" + nowHour + ":" + nowMin + ":" + nowSec + " です。";
            document.getElementById("RealtimeClockArea").innerHTML = msg;
           }
-          setInterval('showClock2()',1000);
+          setInterval(showClock2, 1000);
           
 var startButton;    // startボタン
 var stopButton;     // stopボタン
@@ -25,13 +25,12 @@ var startTime;          // 開始時間
 var elapsedTime = 0;    // 経過時間
 var holdTime = 0;       // 一時停止用に時間を保持
 
-window.onload = function () {
-    startButton = document.getElementById("start");
-    stopButton = document.getElementById("stop");
-    resetButton = document.getElementById("reset");
-    showTime = document.getElementById("time");
-}
-
+document.addEventListener("DOMContentLoaded", function () {
+  startButton = document.getElementById("start");
+  stopButton = document.getElementById("stop");
+  resetButton = document.getElementById("reset");
+  showTime = document.getElementById("time");
+});
 // スタートボタン押下時
 function start(){
     // 開始時間を現在の時刻に設定
@@ -85,3 +84,4 @@ function measureTime() {
         measureTime();
     }, 10);
 }
+
