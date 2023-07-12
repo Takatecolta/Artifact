@@ -20,6 +20,11 @@
                 <p>{{ $reviews->body }}</p>    
             </div>
         </div>
+        <div class= "studycontainer">
+            <div class="study">
+                <button type="button">勉強を開始する</button>
+            </div>
+        </div>
         <form action="/reviews/{{ $reviews->id }}" id="form_{{ $reviews->id }}" method="post" style="display:inline">
         @csrf
         @method('DELETE')
