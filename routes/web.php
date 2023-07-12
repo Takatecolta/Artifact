@@ -32,6 +32,9 @@ Route::group(['middleware' => ['auth']],function(){
     Route::get('/gets/index', 'TargetController@create');
 
     Route::get('/gets/setting', 'TargetController@setting');
+
+    
+    Route::get('/gets/google_login', 'LoginController@index');
  
 });
 Auth::routes();

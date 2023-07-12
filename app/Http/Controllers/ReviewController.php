@@ -29,6 +29,8 @@ class ReviewController extends Controller
     {
     $input = $request['review'];
     $input['user_id'] = Auth::id();
+    $input['current_date'] = $request->input('current_date');;
+    $input['deadlinedate'] = $request->input('deadline');
     $review->fill($input)->save();
     return redirect('/reviews/' . $review->id);
     }

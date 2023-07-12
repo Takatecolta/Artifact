@@ -6,11 +6,13 @@
         <title>Posts</title>
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-        <link rel="stylesheet" href="/css/app.css">
+        <link rel="stylesheet" href="/css/show.css">
     </head>
     <body>
         <h1 class="title">
+            <p>{{ $reviews->current_date }}</p>
             {{ $reviews->title }}
+            {{ $reviews->deadlinedate }}
         </h1>
         <div class="content">
             <div class="content__post">
