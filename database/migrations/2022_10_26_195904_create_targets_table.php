@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTargetTable extends Migration
+class CreateTargetsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateTargetTable extends Migration
      */
     public function up()
     {
-        Schema::create('target', function (Blueprint $table) {
+        Schema::create('targets', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->date('testday'); 
             $table->time('studytime'); 
-            $table->integer('users_id')->unsigned(); 
+            $table->integer('user_id')->unsigned(); 
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateTargetTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('target');
+        Schema::dropIfExists('targets');
     }
 }

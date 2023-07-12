@@ -1,0 +1,167 @@
+display:none
+/* ページ全体のスタイル */
+
+body {
+  font-family: 'Nunito', sans-serif;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+#time {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.timebtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.timebtn button {
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#start {
+  background-color: #006d8c;
+  color: white;
+}
+
+#stop,
+#reset {
+  background-color: #006d8c;
+  color: white;
+}
+
+#stop:disabled,
+#reset:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.timebtn button:hover {
+  opacity: 0.8;
+}
+
+
+
+.calendar-wrapper{
+  width: 75%;
+  height: auto;
+  margin: auto;
+}
+
+/* ナビゲーション */
+nav {
+  display: flex;
+  justify-content: center;  /* ナビゲーションバーを水平方向に中央に配置する */
+  align-items: center;
+  background-color: #f2f2f2;
+  padding: 15px;
+  margin-bottom: 10px;
+}
+
+.nav-buttons {
+  display: flex;
+  align-items: center;
+  
+}
+
+.nav-buttons .btn {
+  margin-right: 20px;
+}
+
+
+/* レビュー一覧 */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+th:first-child, td:first-child {
+  width: 20%;
+  font-weight: bold;
+}
+
+/* 時間計測 */
+#time {
+  font-size: 48px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* ボタン */
+button {
+  background-color: #008cba;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: bold;
+  margin-right: 10px;
+  cursor: pointer;
+  /*display: block;*/
+  /*margin: auto;*/
+}
+
+button:hover {
+  background-color: #006d8c;
+}
+
+button:disabled {
+  background-color: #ccc;
+  color: #666;
+  cursor: default;
+}
+
+
+.btn {
+  display: flex;
+  background-color: #008cba;
+  color: #fff;
+  border-radius: 4px;
+  padding: 10px 20px;
+  margin-right: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn:hover {
+  background-color: #006d8c;
+}
+
+
+/* エラーメッセージ */
+.alert {
+  background-color: #f2dede;
+  border: 1px solid #ebccd1;
+ 
+}

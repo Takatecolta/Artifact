@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateReviewTable extends Migration
+class AddDeadlineColumToReviewsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,9 @@ class CreateReviewTable extends Migration
      */
     public function up()
     {
-        Schema::create('review', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('title',50);
-            $table->string('body'); 
-            $table->integer('users_id')->unsigned(); 
-            $table->timestamps();
+        Schema::table('reviews', function (Blueprint $table) {
+            $table->date('deadlinedate')->nullable()->default(DB::raw('DEADLINE'));
+            //
         });
     }
 
@@ -29,6 +26,9 @@ class CreateReviewTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('review');
+        Schema::table('reviews', function (Blueprint $table) {
+            $table->dropColumn('deadlinedate');
+            //
+        });
     }
 }
