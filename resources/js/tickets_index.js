@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+                document.addEventListener('DOMContentLoaded', () => {
                 const posts = document.querySelectorAll('.post');
 
                 let draggedItem = null;

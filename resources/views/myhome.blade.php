@@ -47,10 +47,11 @@
         </script>
     </head>
     <body>
+        <iframe src="https://calendar.google.com/calendar/embed?src=takatecolta.36%40gmail.com&ctz=Asia%2FTokyo" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
         <nav>
   　　　 　<div class="nav-buttons">
-    　　　<a href="/reviews/create" class="btn">チケット作成</a>
-    　　　<a href="/reviews/index" class="btn">チケット</a>
+    　　　<a href="/tickets/create" class="btn">チケット作成</a>
+    　　　<a href="/tickets/index" class="btn">チケット</a>
     　　　<a href="/gets/google_login" class="btn">ユーザー一覧</a>
     　　　<a href="/gets/index" class="btn">集計</a>
  　　　　　 </div>
