@@ -26,6 +26,22 @@ Route::group(['middleware' => ['auth']],function(){
 
     Route::get('/reviews/{review}/edit', 'ReviewController@edit');
     Route::put('/reviews/{review}', 'ReviewController@update');
+    
+
+    Route::get('/tickets/index', 'TicketController@index');
+
+    Route::get('/tickets/create', 'TicketController@create');
+
+    Route::get('/tickets/{ticket}', 'TicketController@show');
+
+    Route::post('/tickets', 'TicketController@store');
+
+    Route::get('/tickets/{ticket}/edit', 'TicketController@edit');
+    Route::put('/tickets/{ticket}', 'TicketController@update');
+
+    Route::delete('/tickets/{ticket}', 'TicketController@delete');
+    
+    
 
     Route::delete('/reviews/{review}', 'ReviewController@delete');
 
