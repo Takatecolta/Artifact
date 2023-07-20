@@ -20,16 +20,16 @@
                <input type="date" name="ticket[deadline_date]" value="{{ date('Y-m-d') }}">
             </div>
             <div class="time">
-                <h4>予定時間:</h4>
+                <h4>予定時間 : </h4>
                 <input type="text" name="ticket[planned_time]" placeholder="予定時間"/>
                 <p class="planned__error" style="color:red">{{ $errors->first('ticket.planned_time') }}</p>
-                <h4>実績時間:</h4>
+                <h4>実績時間 : </h4>
                 <input type="text" name="ticket[actual_time]" placeholder="実績時間"/>
                 <p class="actual__error" style="color:red">{{ $errors->first('ticket.actual_time') }}</p>
             </div>
             <div class="body">
                 <h2>概要</h2>
-                <textarea name="ticket[body]" placeholder="目標"></textarea>
+                <textarea name="ticket[body]" placeholder="今日の成果、目標など"></textarea>
                 <p class="body__error" style="color:red">{{ $errors->first('ticket.body') }}</p>
             </div>
             <input type="hidden" name="ticket[user_id]" value="{{ Auth::user()->id }}">

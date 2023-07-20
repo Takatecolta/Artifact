@@ -1,0 +1,140 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9fcff;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+form input[type="text"] {
+    width: 98%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+textarea {
+    width: 98%;
+    height: 250px; /* テキストエリアの高さを調整する値を指定 */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.body input[type="text"]{
+    width: 98%;
+    height: 250px; /* 適切な高さに調整してください */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+
+form input[type="submit"] {
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+form input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.back {
+    margin-top: 20px;
+}
+
+.back a {
+    color: #333;
+    text-decoration: none;
+}
+
+.back a:hover {
+    text-decoration: underline;
+}
+
+.title__error,
+.body__error {
+    margin-top: 5px;
+    font-size: 14px;
+}
+.back {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.back a {
+    color: #333;
+    text-decoration: none;
+    padding: 5px 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.back a:hover {
+    background-color: #ccc;
+}
+
+ .date,
+ .time {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+}
+
+  .date h2,
+  .time h2 {
+    margin-right: 10px;
+}
+.date input[type="date"]{
+    margin-right: 30px;
+    width: 100px;
+}
+
+   .time input[type="text"] {
+      margin-right: 20px;
+      height: 10px;
+      width: 70px;
+}
+.time input[type="text"]::placeholder {
+        font-size: 12px;
+        text-align: center;
+    }
+    
+.time h4::after {
+    content: "\00a0"; /* スペースを追加 */
+    letter-spacing: 4px; /* スペースの幅を調整 */
+}
+
+.date h4::after{
+    content: "\00a0";
+    letter-spacing: 22px;
+}
+
+.date h4,
+.time h4 {
+    margin-right: 10px;
+}
+
+.date input[type="date"],
+.time input[type="text"] {
+    margin-right: 20px;
+}

@@ -5,7 +5,7 @@
         <title>Blog</title>
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-        <link rel="stylesheet" href="{{ asset('/css/review_view.css') }}">
+        <link rel="stylesheet" href="{{ asset('/css/edit.css') }}">
     </head>
     <body>
         <h1 class="title">編集画面</h1>
@@ -17,25 +17,23 @@
                     <h2>タイトル</h2>
                     <input type='text' name='ticket[title]' value="{{ $tickets->title }}">
                 </div>
-                <div class='current_date'>
-                    <h3>日付</h3>
+            <div class="date">
+                    <h4>日付 :</h4>
                     <input type="date" id="meeting-time" name="ticket[current_date]" value="{{ $tickets->current_date }}">
-                </div>
-                <div class='deadline'>
-                    <h3>期日</h3>
+                
+                    <h4>期限日 :</h4>
                     <input type="date" id="meeting-time" name="ticket[deadline_date]" value="{{ $tickets->deadline_date }}">
-                </div>
-                <div class='planned_time'>
-                    <h3>予定時間</h3>
+            </div>
+            <div class="time">
+                    <h4>予定時間 :</h4>
                     <input type="text" id="meeting-time" name="ticket[planned_time]" value="{{ $tickets->planned_time }}">
-                </div>
-                <div class='actual_time'>
-                    <h3>実績時間</h3>
+                    <h4>実績時間 :</h4>
                     <input type="text" id="meeting-time" name="ticket[actual_time]" value="{{ $tickets->actual_time }}">
-                </div>
-                <div class='content__body'>
-                    <h2>本文</h2>
-                    <input type='text' name='ticket[body]' value="{{ $tickets->body }}">
+            </div>
+                <div class='body'>
+                    <h2>概要</h2>
+                    <!--<input type='text' name='ticket[body]' value="{{ $tickets->body }}">-->
+                    <textarea name="ticket[body]" value="{{ $tickets->body }}" placeholder="今日の成果、目標など">{{ $tickets->body }}</textarea>
                 </div>
                 <input type="submit" value="保存">
             </form>

@@ -37,6 +37,9 @@ Route::group(['middleware' => ['auth']],function(){
     Route::post('/tickets', 'TicketController@store');
 
     Route::get('/tickets/{ticket}/edit', 'TicketController@edit');
+    
+    Route::get('/tickets-get', 'TicketController@getTickets');
+    
     Route::put('/tickets/{ticket}', 'TicketController@update');
 
     Route::delete('/tickets/{ticket}', 'TicketController@delete');

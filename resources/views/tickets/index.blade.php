@@ -18,12 +18,15 @@
                     <script src="{{ asset('/js/tickets_index.js') }}"></script>
                     @foreach ($tickets as $ticket)
                     <div class='post' draggable='true'>
-                        <h1 class='id'>
-                            <a href="/tickets/{{ $ticket->id }}">{{ $ticket->id }}</a>
-                        </h1>
-                        <h3>
+                        <h4 class="cv">
+                            <a href="/tickets/{{ $ticket->id }}">CV-{{ $ticket->id }}</a>
+                        </h4>
+                        <h3 class='id'>
                             <a href="/tickets/{{ $ticket->id }}">{{ $ticket->title }}</a>
                         </h3>
+                        <h4 class="id">
+                            <a href="/tickets/{{ $ticket->id }}">{{ $ticket->deadline_date }}</a>
+                        </h4>
                         <p class='name'>{{ $ticket->name }}</p>
                     </div>
                     @endforeach
