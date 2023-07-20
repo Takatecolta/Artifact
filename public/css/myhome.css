@@ -5,61 +5,10 @@ body {
   font-family: 'Nunito', sans-serif;
 }
 
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  margin: 0;
-  padding: 0;
-}
-
-#time {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-.timebtn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.timebtn button {
-  margin: 5px;
-  padding: 10px 20px;
-  font-size: 16px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-#start {
-  background-color: #006d8c;
-  color: white;
-}
-
-#stop,
-#reset {
-  background-color: #006d8c;
-  color: white;
-}
-
-#stop:disabled,
-#reset:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-.timebtn button:hover {
-  opacity: 0.8;
-}
-
 
 
 .calendar-wrapper{
-  width: 75%;
+  width: 70%;
   height: auto;
   margin: auto;
 }

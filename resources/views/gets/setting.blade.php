@@ -1,12 +1,19 @@
+
 <!DOCTYPE html>
+
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
         <title>設定・集計</title>
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('/css/setting.css') }}">
     </head>
     <body>
+        <div class="title_container">
+            <h2>目標日までの時間を設定してください</h2>
+        </div>
+        <div class=time>
         <p>
          <input type="text" id="userYear"  maxlength="4">年
          <input type="text" id="userMonth" maxlength="2">月
@@ -14,8 +21,11 @@
          <input type="text" id="userHour"  maxlength="2">時
          <input type="text" id="userMin"   maxlength="2">分
          <input type="text" id="userSec"   maxlength="2">秒<br>
-         <input type="button" value="上記の日時までカウントダウンする" onclick="showCountdown();">
         </p>
+        </div>
+        <div class="contbutton">
+            <input type="button" value="上記の日時までカウントダウンする" onclick="showCountdown();">
+        </div>
         <p id="RealtimeCountdownArea">※ここにカウントダウンが表示されます。</p>
         
         <script>

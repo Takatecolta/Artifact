@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background-color: #f9fcff;
     margin: 0;
     padding: 20px;
 }
@@ -16,14 +16,23 @@ form {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-form input[type="text"],
-form textarea {
-    width: 100%;
+form input[type="text"] {
+    width: 98%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
 }
+
+textarea {
+    width: 98%;
+    height: 250px; /* テキストエリアの高さを調整する値を指定 */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
 
 form input[type="submit"] {
     background-color: #4caf50;
@@ -79,6 +88,7 @@ form input[type="submit"]:hover {
  .time {
     display: flex;
     align-items: center;
+    border-bottom: 1px solid #ccc;
 }
 
   .date h2,
@@ -87,13 +97,25 @@ form input[type="submit"]:hover {
 }
 .date input[type="date"]{
     margin-right: 30px;
-    width: 80px;
+    width: 100px;
 }
 
    .time input[type="text"] {
       margin-right: 20px;
-      width: 50px;
+      height: 10px;
+      width: 70px;
 }
 .time input[type="text"]::placeholder {
         font-size: 12px;
+        text-align: center;
     }
+    
+.time h4::after {
+    content: "\00a0"; /* スペースを追加 */
+    letter-spacing: 4px; /* スペースの幅を調整 */
+}
+
+.date h4::after{
+    content: "\00a0";
+    letter-spacing: 22px;
+}

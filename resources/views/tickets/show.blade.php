@@ -9,21 +9,35 @@
         <link rel="stylesheet" href="/css/show.css">
     </head>
     <body>
-        <h1 class="title">
-            <p>{{ $tickets->current_date }}</p>
-            {{ $tickets->title }}
-            {{ $tickets->deadline_date }}
-            {{ $tickets->planned_time }}
-            {{ $tickets->actual_time }}
-        </h1>
+    <div class=tickets_container>
+        <div class="title">
+             <h1 class="title">
+                 {{ $tickets->title }}
+            </h1>
+        </div>
+    <div class="datecontainer">
+        <div class="current_date">
+            <h3>日付 :{{ $tickets->current_date }}</h3>
+        </div>
+         <div class="deadline_date">
+            <h3>期限日 :{{ $tickets->deadline_date }}</h3>
+    </div>
+    <div class="timecontainer">
+        <div class="planned_time">
+            <h3>予定時間 :{{ $tickets->planned_time }}</h3>
+        </div>
+         <div class="actual_time">
+            <h3>実績時間 :{{ $tickets->actual_time }}</h3>
+    </div>
         <div class="content">
             <div class="content__post">
                 <h3>本文</h3>
-                <p>{{ $tickets->body }}</p>    
+                <p>{!! nl2br(e($tickets->body)) !!}</p>      
             </div>
         </div>
+    </div>
         <div class="studycontainer">
-        　　<script src="{{ asset('/js/myhome.js') }}"></script>
+        　　<script src="{{ asset('/js/tickets_show.js') }}"></script>
             <div class="study">
                 <details>
                     <summary>勉強を開始する</summary>
