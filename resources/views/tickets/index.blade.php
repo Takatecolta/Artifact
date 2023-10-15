@@ -14,12 +14,12 @@
         <div class='statuses'>
             <div class='status'>
                 <h2>未進行</h2>
-                <div class='postscontainer'>
+                <div class='postscontainer' id='not-in-progress'>
                     <script src="{{ asset('/js/tickets_index.js') }}"></script>
                     @foreach ($tickets as $ticket)
                     <div class='post' draggable='true'>
                         <h4 class="cv">
-                            <a href="/tickets/{{ $ticket->id }}">CV-{{ $ticket->id }}</a>
+                        <a href="/tickets/{{ $ticket->id }}">Task-{{ $ticket->id }}</a>
                         </h4>
                         <h3 class='id'>
                             <a href="/tickets/{{ $ticket->id }}">{{ $ticket->title }}</a>
@@ -35,13 +35,13 @@
 
             <div class='status'>
                 <h2>進行中</h2>
-                <div class='postscontainer'>
+                <div class='postscontainer' id='in-progress'>
                 </div>
             </div>
 
             <div class='status'>
                 <h2>完了</h2>
-                <div class='postscontainer'>
+                <div class='postscontainer' id='completed'>
                 </div>
             </div>
         </div>

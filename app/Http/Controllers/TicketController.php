@@ -58,40 +58,6 @@ class TicketController extends Controller
                 'url'   => 'https://732b0e60314a477daa61e14dc24380a3.vfs.cloud9.us-east-1.amazonaws.com/tickets/'.$tk->id,
             ];
         });
-        
-        //  // カレンダー表示期間
-        // $start_date = date('Y-m-d', $request->input('start_date') / 1000);
-        // $end_date = date('Y-m-d', $request->input('end_date') / 1000);
-        
-        // 登録処理
-        // return Ticket::query()
-        //     ->select(
-        //         // FullCalendarの形式に合わせる
-        //         'current_date as start',
-        //         'deadline_date as end',
-        //         'title as title'
-        //     )
-        //      // FullCalendarの表示範囲のみ表示
-        //     ->where('start_date', '>', $start_date)
-        //     ->where('end_date', '<', $end_date)
-        //     ->get();
-        // $input = Ticket::all()[0];
-        // return [['title'=>$input->title, 'start'=>$input->current_date, 'end'=>$input->deadline_date]];
-        // return [
-        //     [
-        //         'title' => 'title',
-        //         'description' => '人気の美容室予約取れた',
-        //         'start' => '2023-07-09',
-        //         'end'   => '2023-07-10',
-        //     ],
-        //     [
-        //         'title' => 'シルバーウィーク旅行',
-        //         'description' => '人気の旅館の予約が取れた',
-        //         'start' => '2023-07-20 10:00:00',
-        //         'end'   => '2023-07-22 18:00:00',
-        //         'url'   => 'https://admin.juno-blog.site',
-        //     ],
-        // ];
     }
     
     public function update(TicketRequest $request, Ticket $ticket)

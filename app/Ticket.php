@@ -13,7 +13,8 @@ class Ticket extends Model
     'deadline_date',
     'current_date',
     'planned_time',
-    'actual_time'
+    'actual_time',
+    'progress',
     ];
     
      public function getPaginateByLimit(int $limit_count = 20)

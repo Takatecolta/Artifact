@@ -29,6 +29,13 @@
                     <input type="text" id="meeting-time" name="ticket[planned_time]" value="{{ $tickets->planned_time }}">
                     <h4>実績時間 :</h4>
                     <input type="text" id="meeting-time" name="ticket[actual_time]" value="{{ $tickets->actual_time }}">
+                    <div class="progress">
+                <select name="ticket[progress]">
+                    <option value=0>未進行</option>
+                    <option value=1>進行中</option>
+                    <option value=2>完了</option>
+                </select>
+                </div>
             </div>
                 <div class='body'>
                     <h2>概要</h2>
