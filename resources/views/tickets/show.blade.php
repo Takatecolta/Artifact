@@ -28,6 +28,9 @@
         </div>
          <div class="actual_time">
             <h3>実績時間 :{{ $tickets->actual_time }}</h3>
+       <div class='progress'>
+           <h3>:{{ $tickets->progress }}</h3>
+       </div>
     </div>
         <div class="content">
             <div class="content__post">

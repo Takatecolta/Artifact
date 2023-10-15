@@ -26,6 +26,13 @@
                 <h4>実績時間 : </h4>
                 <input type="text" name="ticket[actual_time]" placeholder="実績時間"/>
                 <p class="actual__error" style="color:red">{{ $errors->first('ticket.actual_time') }}</p>
+                <div class="progress">
+                <select name="ticket[progress]">
+                    <option value=0>未進行</option>
+                    <option value=1>進行中</option>
+                    <option value=2>完了</option>
+                </select>
+                </div>
             </div>
             <div class="body">
                 <h2>概要</h2>
