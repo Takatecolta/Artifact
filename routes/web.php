@@ -40,11 +40,15 @@ Route::group(['middleware' => ['auth']],function(){
     
     Route::get('/tickets-get', 'TicketController@getTickets');
     
+    Route::get('/tickets-color','TicketController@TicketColor');
+    
     Route::put('/tickets/{ticket}', 'TicketController@update');
 
     Route::delete('/tickets/{ticket}', 'TicketController@delete');
     
+    Route::post('/js/tickets_index', 'TicketController@updateTicketProgress');
     
+    Route::post('/update_progress/{ticket}', 'TicketController@updateTicketProgress');
 
     Route::delete('/reviews/{review}', 'ReviewController@delete');
 

@@ -31,9 +31,9 @@
                     <input type="text" id="meeting-time" name="ticket[actual_time]" value="{{ $tickets->actual_time }}">
                     <div class="progress">
                 <select name="ticket[progress]">
-                    <option value=0>未進行</option>
-                    <option value=1>進行中</option>
-                    <option value=2>完了</option>
+                    <option value=0 {{ $tickets->progress == 0 ? 'selected' : '' }}>未進行</option>
+                    <option value=1 {{ $tickets->progress == 1 ? 'selected' : '' }}>進行中</option>
+                    <option value=2 {{ $tickets->progress == 2 ? 'selected' : '' }}>完了</option>
                 </select>
                 </div>
             </div>
