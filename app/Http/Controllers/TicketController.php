@@ -36,19 +36,11 @@ class TicketController extends Controller
     {
         return view('tickets/edit')->with(['tickets' => $ticket]);
     }
-    
+    //チケットを全取得して、カレンダーに表示させる
     public function getTickets(Request $request)
     {   
         $all_tickets = Ticket::all();
         
-        // return [
-        //     [
-        //         'title' => $first_ticket->title,
-        //         'start' => $first_ticket->current_date,
-        //         'end'   => $first_ticket->deadline_date,
-        //     ],
-        // ];
-        // return array_map('toCalEventJson', $all_tickets)
         
         return $all_tickets->map(function ($tk) {
             return [
@@ -56,8 +48,24 @@ class TicketController extends Controller
                 'start' => $tk->current_date,
                 'end'   => $tk->deadline_date,
                 'url'   => 'https://732b0e60314a477daa61e14dc24380a3.vfs.cloud9.us-east-1.amazonaws.com/tickets/'.$tk->id,
+                'color' => $this->TicketColor($tk->progress),
             ];
         });
+    }
+    //チケットの色を変更したい
+    public function TicketColor($progress){
+        $all_tickets = Ticket::all();
+        $color = '';
+        if($progress===1){
+            $color='#ff4500';
+            return $color;
+        }elseif($progress===2){
+            $color='#2e8b57';
+            return $color;
+        }else{
+            $color='#ffd700';
+            return $color;
+        }
     }
     
     public function update(TicketRequest $request, Ticket $ticket)
@@ -71,7 +79,28 @@ class TicketController extends Controller
     
     public function delete(Ticket $ticket)
     {
+        info('delete', ['foo' => 'bar']);
         $ticket->delete();
         return redirect('/tickets/index');
+    }
+    
+    
+    
+    public function updateTicketProgress(Request $request, $ticketId)
+    {
+        info('call updateTicketProgress');
+    //   info('updateTicketProgress', print_r($request, true));
+    //   $ticketId = $request->input('ticketId');
+        $newProgress = $request->input('newProgress');
+        info($newProgress);
+
+      
+    // //   info('find', (Ticket::find($ticketId));
+    //   // チケットの進捗状態を更新
+        $ticket = Ticket::find($ticketId);
+        $ticket->progress = $newProgress;
+        $ticket->save();
+
+        return response()->json(['message' => '進捗状態が更新されました']);
     }
 }

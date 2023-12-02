@@ -20,7 +20,6 @@
          <input type="text" id="userDate"  maxlength="2">日
          <input type="text" id="userHour"  maxlength="2">時
          <input type="text" id="userMin"   maxlength="2">分
-         <input type="text" id="userSec"   maxlength="2">秒<br>
         </p>
         </div>
         <div class="contbutton">

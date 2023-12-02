@@ -29,7 +29,15 @@
          <div class="actual_time">
             <h3>実績時間 :{{ $tickets->actual_time }}</h3>
        <div class='progress'>
-           <h3>:{{ $tickets->progress }}</h3>
+           <h3>状態 :
+           @if ($tickets->progress == 0)
+            未進行
+           @elseif ($tickets->progress == 1)
+            進行中
+           @elseif ($tickets->progress == 2)
+            完了 
+           @endif
+           </h3>
        </div>
     </div>
         <div class="content">
@@ -44,12 +52,12 @@
             <div class="study">
                 <details>
                     <summary>勉強を開始する</summary>
-                   <div id="time">00:00.000</div>
+                   <div id="time">00:00:00</div>
                      <div class="timebtn">
                      <button id="start" onclick="start()">Start</button>
                      <button id="stop" onclick="stop()" disabled>Stop</button>
                      <button id="reset" onclick="reset()" disabled>Reset</button>
-                     <button id="complete" onclick="complete()" disabled>Complete</button>
+                     <button id="complete" onclick="complete()">Complete</button>
                      </div>
                     </div>
                 </details>

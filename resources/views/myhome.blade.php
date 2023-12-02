@@ -40,11 +40,13 @@
                alert('Selected ' + info.startStr + ' to ' + info.endStr);
               },
               eventSources:[
-              {url:'/tickets-get'}
+              {url:'/tickets-get',}
               ]
               })
             calendar.render();
           });
+          
+          console.log('/tickets-get')
 
         </script>
     </head>
